@@ -55,10 +55,31 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 
 **Acceptance Criteria**
 
-- Can see a page with a three-by-three grid board game
-- Can see a question mark in each square
-- Can click on any of the question marks and see an alert with the index position of that question mark in the array
-- Can click on any of the question marks and a tree emoji appears instead of the alert
+- Can see a page with a three-by-three grid board game (done)
+  - get one square
+  - map over the array in state to get nine squares
+  - square - individual
+  - board - set of squares
+  - added a div to the board and styling to place the squares in a grid
+- Can see a question mark in each square (done)
+  - passed the question mark from state into the Square component as props
+  - added styling to the question mark
+- Can click on any of the question marks and see an alert with the index position of that question mark in the array (done)
+  - added an onClick to square
+  - made a handleClick function to square
+  - passed index as props
+  - made a handleGamePlay function and passed it as props to Square
+  - called the handleGamePlay in the handleClick function and passed the index
+- Can click on any of the question marks and a tree emoji appears instead of the alert (done)
+  - emoji keyboard: control + command + spacebar
+  - updating the specific element in the array with a tree emoji
+  - updating state with an array containing the tree and all the other values in the current state array
+  - one way to approach this:
+  ```javascript
+  const updatedBoard = [...board]
+  updatedBoard[currentSquare] = "🌴"
+  setBoard(updatedBoard)
+  ```
 
 **Story 2**: In order to play the treasure hunt game, as the user of the application, I should be able to see a winning square and a losing square.
 
